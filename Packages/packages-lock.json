@@ -239,7 +239,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.9.0",
+      "version": "1.9.8",
       "depth": 0,
       "source": "registry",
       "dependencies": {
