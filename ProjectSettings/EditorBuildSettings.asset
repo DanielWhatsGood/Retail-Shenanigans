@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/selection.unity
-    guid: 94021a6ec2f56164f93ebf6a8b27a4d7
+  - enabled: 1
+    path: Assets/Scenes/AvatarSelection.unity
+    guid: 031bfb18c1cbe194984bb6a5382c9f2b
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
