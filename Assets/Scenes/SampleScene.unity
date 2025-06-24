@@ -1803,7 +1803,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2, y: 0.05, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1870,7 +1870,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.04
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
       propertyPath: m_LocalScale.y
@@ -1924,6 +1924,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightSaber_FBX
       objectReference: {fileID: 0}
+    - target: {fileID: 2382799219754379413, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382799219754379413, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_Color.g
+      value: 0.18528922
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382799219754379413, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382799219754379413, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3280927520727180574, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1952,6 +1968,42 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[6]
       value: 
       objectReference: {fileID: 2100000, guid: 2e114d448195fd54fb3c0004aa1d6e53, type: 2}
+    - target: {fileID: 9222065738425870839, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222065738425870839, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222065738425870839, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222065738425870839, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.75470966
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222065738425870839, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222065738425870839, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.656059
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222065738425870839, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222065738425870839, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -82
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222065738425870839, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2442,8 +2494,8 @@ Transform:
   m_GameObject: {fileID: 1734226633}
   serializedVersion: 2
   m_LocalRotation: {x: 0.057324275, y: 0.057324275, z: 0.7047794, w: 0.7047794}
-  m_LocalPosition: {x: 2.036582, y: 0.58455616, z: -0.0019460917}
-  m_LocalScale: {x: 0.9201533, y: 2.916417, z: 0.9201533}
+  m_LocalPosition: {x: 2.03, y: 0.552, z: -0.06}
+  m_LocalScale: {x: 0.87135756, y: 2.7617593, z: 0.87135756}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1496444784}
