@@ -1937,7 +1937,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2382799219754379413, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_DrawHalo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382799219754379413, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
       propertyPath: m_Intensity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382799219754379413, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_CookieSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2382799219754379413, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
+      propertyPath: m_Shadows.m_Type
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3280927520727180574, guid: 99bf77559b8f97d499480ea6d7cb3185, type: 3}
