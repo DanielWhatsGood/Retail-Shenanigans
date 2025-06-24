@@ -1,4 +1,42 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using TMPro;
+
+public class LoadCharacter : MonoBehaviour
+{
+    public GameObject[] characterPrefabs;
+    public Transform spawnPoint;
+    public TMP_Text label;
+
+    void Start()
+    {
+        // Find OVRCameraRig in the scene
+        GameObject ovrRig = GameObject.Find("OVRCameraRig"); // Or "OVRPlayerController" if that's your root object
+
+        if (ovrRig == null)
+        {
+            Debug.LogError("OVRCameraRig not found!");
+            return;
+        }
+
+        int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter", 0);
+        if (selectedCharacter < 0 || selectedCharacter >= characterPrefabs.Length)
+        {
+            Debug.LogError("Invalid selectedCharacter index.");
+            return;
+        }
+
+        GameObject prefab = characterPrefabs[selectedCharacter];
+
+        // Instantiate avatar as a child of OVRCameraRig
+        GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity, ovrRig.transform);
+
+        label.text = prefab.name;
+    }
+}
+
+
+/*
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -11,13 +49,13 @@ public class LoadCharacter : MonoBehaviour
 
     public TMP_Text label;
 
-    //GameObject ovrRig = GameObject.Find("OVRCameraRig"); // Or adjust if it's under "OVRPlayerController"
+    GameObject ovrRig = GameObject.Find("OVRCameraRig"); // Or adjust if it's under "OVRPlayerController"
 
     void Start()
 	{
 		int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter");
 		GameObject prefab = characterPrefabs[selectedCharacter];
-		GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity);
+		GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity, ovrRig);
 		label.text = prefab.name;
 	}
 
@@ -26,6 +64,7 @@ public class LoadCharacter : MonoBehaviour
         throw new NotImplementedException();
     }
 }
+*/
 
 
 /*
