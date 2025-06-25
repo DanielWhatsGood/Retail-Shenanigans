@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.avaturn.webview": "https://github.com/avaturn/avaturn-unity-webview-sdk.git",
     "com.meta.xr.sdk.all": "72.0.0",
     "com.meta.xr.sdk.movement": "https://github.com/oculus-samples/Unity-Movement.git",
     "com.unity.cloud.gltfast": "6.13.0",

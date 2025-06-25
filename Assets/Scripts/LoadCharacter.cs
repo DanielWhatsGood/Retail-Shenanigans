@@ -1,11 +1,28 @@
-﻿using UnityEngine;
+﻿using Oculus.Platform;
+using System.Diagnostics;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class LoadCharacter : MonoBehaviour
 {
     public GameObject[] characterPrefabs;
     public Transform spawnPoint;
     public TMP_Text label;
+
+    Transform FindHeadMesh(Transform root)
+    {
+        foreach (Transform t in root.GetComponentsInChildren<Transform>())
+        {
+            if (t.name.ToLower().Contains("head") && t.GetComponent<Renderer>() != null)
+            {
+                UnityEngine.Debug.Log("Removed: " + t);
+                return t;
+            }
+        }
+        return null;
+    }
+
 
     void Start()
     {
@@ -14,21 +31,34 @@ public class LoadCharacter : MonoBehaviour
 
         if (ovrRig == null)
         {
-            Debug.LogError("OVRCameraRig not found!");
+            UnityEngine.Debug.LogError("OVRCameraRig not found!");
             return;
         }
 
         int selectedCharacter = PlayerPrefs.GetInt("selectedCharacter", 0);
         if (selectedCharacter < 0 || selectedCharacter >= characterPrefabs.Length)
         {
-            Debug.LogError("Invalid selectedCharacter index.");
+            UnityEngine.Debug.LogError("Invalid selectedCharacter index.");
             return;
         }
 
         GameObject prefab = characterPrefabs[selectedCharacter];
 
-        // Instantiate avatar as a child of OVRCameraRig
-        GameObject clone = Instantiate(prefab, spawnPoint.position, Quaternion.identity, ovrRig.transform);
+        //Instantiate avatar as a child of OVRCameraRig
+        GameObject avatar = Instantiate(prefab, spawnPoint.position, Quaternion.identity, ovrRig.transform);
+
+
+        Transform head = avatar.transform.Find("FixedDefaultManAvatar/Armature/Hips/Spine/Spine1/Spine2/Neck/Head");
+
+        //FixedDefaultManAvatar/Armature/Hips/Spine/Spine1/Spine2/Neck/Head
+
+        //Transform head = FindHeadMesh(avatar.transform);
+        if (head != null)
+        {
+            head.gameObject.layer = LayerMask.NameToLayer("FirstPersonHidden");
+        }
+        
+
 
         label.text = prefab.name;
     }

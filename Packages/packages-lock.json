@@ -1,5 +1,16 @@
 {
   "dependencies": {
+    "com.avaturn.webview": {
+      "version": "https://github.com/avaturn/avaturn-unity-webview-sdk.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.unity.cloud.gltfast": "5.2.0",
+        "com.unity.cinemachine": "2.6.17"
+      },
+      "hash": "e2be3c930826d5eba3bced038cc68d08e53667c4"
+    },
     "com.meta.xr.mrutilitykit": {
       "version": "72.0.0",
       "depth": 1,
@@ -127,6 +138,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.cinemachine": {
+      "version": "2.9.5",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.31"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.cloud.gltfast": {
       "version": "6.13.0",
       "depth": 0,
@@ -219,7 +239,7 @@
     },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.2.1",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
