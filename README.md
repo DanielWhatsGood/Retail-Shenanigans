@@ -2,7 +2,6 @@
 Retail project experience for Dr. Azimi
 
 QODED Internship 2025
-
 University of Arizona
 
 
