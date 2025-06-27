@@ -10,19 +10,30 @@ public class LoadCharacter : MonoBehaviour
     public Transform spawnPoint;
     public TMP_Text label;
 
+    /*
     Transform FindHeadMesh(Transform root)
     {
         foreach (Transform t in root.GetComponentsInChildren<Transform>())
         {
             if (t.name.ToLower().Contains("head") && t.GetComponent<Renderer>() != null)
             {
-                UnityEngine.Debug.Log("Removed: " + t);
+                UnityEngine.Debug.Log("Removed Head: " + t.name);
                 return t;
             }
         }
         return null;
     }
 
+    void SetLayerRecursively(Transform obj, int layer)
+    {
+        obj.gameObject.layer = layer;
+        foreach (Transform child in obj)
+        {
+            UnityEngine.Debug.Log("Removed: " + child.name);
+            SetLayerRecursively(child, layer);
+        }
+    }
+    */
 
     void Start()
     {
@@ -47,20 +58,32 @@ public class LoadCharacter : MonoBehaviour
         //Instantiate avatar as a child of OVRCameraRig
         GameObject avatar = Instantiate(prefab, spawnPoint.position, Quaternion.identity, ovrRig.transform);
 
-
-        Transform head = avatar.transform.Find("FixedDefaultManAvatar/Armature/Hips/Spine/Spine1/Spine2/Neck/Head");
+        //Test code for hiding head mesh in first person POV
+        //Transform head = avatar.transform.Find("FixedDefaultManAvatar/Armature/Hips/Spine/Spine1/Spine2/Neck/Head");
 
         //FixedDefaultManAvatar/Armature/Hips/Spine/Spine1/Spine2/Neck/Head
+        //FixedDefaultManAvatar/Armature/Hips/Spine/Spine1/Spine2/Neck/Head/Head_end
 
-        //Transform head = FindHeadMesh(avatar.transform);
+        /*
+        Transform head = FindHeadMesh(avatar.transform);
         if (head != null)
         {
             head.gameObject.layer = LayerMask.NameToLayer("FirstPersonHidden");
         }
-        
+        */
 
+        /*
+        Transform head = FindHeadMesh(avatar.transform);
+
+        if (head != null)
+        {
+            int hiddenLayer = LayerMask.NameToLayer("FirstPersonHidden");
+            SetLayerRecursively(head, hiddenLayer);
+        }
+        */
 
         label.text = prefab.name;
+
     }
 }
 
